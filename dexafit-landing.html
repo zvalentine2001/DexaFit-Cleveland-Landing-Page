@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10% Off Your First DEXA Body Scan | DexaFit Cleveland</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DESIGN TOKENS — DexaFit Cleveland Brand
+       Primary blue: #3B8FF0  |  BG: #F4F6FA  |  Text: #1A2235
+    ============================================================ */
+    :root {
+      --blue:       #3B8FF0;
+      --blue-dk:    #2A7ADE;
+      --blue-lt:    #5BA5F5;
+      --blue-glow:  rgba(59,143,240,0.13);
+      --blue-hi:    rgba(59,143,240,0.38);
+
+      --bg-page:    #F4F6FA;
+      --bg-alt:     #EBF0F8;
+      --bg-white:   #FFFFFF;
+      --card:       #FFFFFF;
+
+      --border:     #D5DCEA;
+      --border-hi:  rgba(59,143,240,0.38);
+
+      --text-dark:  #1A2235;
+      --text-mid:   #4A5B72;
+      --text-muted: #8A9BB5;
+
+      --ann-bg:     #2A2A2A;
+      --ann-text:   #FFFFFF;
+
+      --yellow:     #F5A623;
+      --green:      #00B87A;
+      --green-bg:   rgba(0,184,122,0.1);
+      --green-bd:   rgba(0,184,122,0.3);
+
+      --grad-blue:  linear-gradient(135deg, #3B8FF0 0%, #2A7ADE 100%);
+      --grad-hero:  linear-gradient(160deg, #EEF3FC 0%, #F4F6FA 100%);
+
+      --shadow-sm:  0 2px 8px rgba(26,34,53,0.08);
+      --shadow-md:  0 8px 24px rgba(26,34,53,0.1);
+      --shadow-lg:  0 20px 48px rgba(26,34,53,0.12);
+      --shadow-btn: 0 8px 24px rgba(59,143,240,0.32);
+
+      --radius-sm:  8px;
+      --radius-md:  12px;
+      --radius-lg:  18px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    input, button, select { font-family: inherit; }
+    button { cursor: pointer; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3.8vw, 40px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--grad-blue);
+      border-radius: 2px;
+      margin: 0 auto 40px;
+    }
+    .blue-text { color: var(--blue); }
+
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .ann-bar {
+      background: var(--ann-bg);
+      color: var(--ann-text);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .ann-bar .timer {
+      display: inline-block;
+      background: rgba(59,143,240,0.25);
+      border: 1px solid rgba(59,143,240,0.4);
+      padding: 2px 9px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #7DC2FF;
+    }
+    .ann-bar a {
+      background: var(--blue);
+      color: #fff;
+      padding: 3px 13px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background 0.18s;
+    }
+    .ann-bar a:hover { background: var(--blue-dk); }
+
+    /* ============================================================
+       LOGO BAR
+    ============================================================ */
+    .logo-bar {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .logo-wordmark {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-x {
+      width: 36px; height: 36px;
+      background: var(--grad-blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+    .logo-name {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--text-dark);
+    }
+    .logo-name span { color: var(--blue); }
+    .logo-sub {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background: var(--grad-hero);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(59,143,240,0.09) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-hi);
+      color: var(--blue);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .hero h1 .blue-text {
+      color: var(--blue);
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+    .hero-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .hero-perks li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15.5px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    .check-icon {
+      width: 22px; height: 22px;
+      background: var(--grad-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(59,143,240,0.35);
+    }
+
+    /* ============================================================
+       FORM CARD
+    ============================================================ */
+    .form-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-lg);
+    }
+    .offer-box {
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-hi);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .offer-box .ob-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+    .offer-box .ob-value {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .offer-box .ob-sub {
+      font-size: 12px;
+      color: var(--text-mid);
+    }
+    .form-step-label {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 18px;
+      color: var(--text-mid);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fg { margin-bottom: 12px; }
+    .fg label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .fg input {
+      width: 100%;
+      background: var(--bg-page);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      font-size: 15px;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .fg input::placeholder { color: var(--text-muted); }
+    .fg input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59,143,240,0.14);
+      background: #fff;
+    }
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: var(--grad-blue);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 15px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      transition: opacity 0.18s, transform 0.12s, box-shadow 0.18s;
+      margin-top: 4px;
+      box-shadow: var(--shadow-btn);
+    }
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px rgba(59,143,240,0.42);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .form-trust {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    .form-success-state {
+      display: none;
+      text-align: center;
+      padding: 10px 0 4px;
+    }
+    .success-circle {
+      width: 58px; height: 58px;
+      background: var(--green-bg);
+      border: 1px solid var(--green-bd);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 12px;
+      color: var(--green);
+    }
+    .success-head { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+    .success-sub { font-size: 13px; color: var(--text-mid); }
+
+    /* ============================================================
+       TRUST BAR
+    ============================================================ */
+    .trust-bar {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      white-space: nowrap;
+    }
+    .trust-item strong { color: var(--text-dark); font-weight: 700; }
+    .stars { color: var(--yellow); font-size: 15px; letter-spacing: 1px; }
+
+    /* ============================================================
+       DISCOVER SECTION
+    ============================================================ */
+    .discover-section { padding: 88px 24px; background: var(--bg-page); }
+    .discover-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .d-card {
+      background: var(--bg-white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+    }
+    .d-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .d-icon { font-size: 30px; margin-bottom: 14px; }
+    .d-title { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .d-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.65; }
+
+    /* ============================================================
+       HOW IT WORKS
+    ============================================================ */
+    .hiw-section {
+      background: var(--bg-alt);
+      padding: 88px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(16.67% + 36px);
+      right: calc(16.67% + 36px);
+      height: 1.5px;
+      background: var(--blue);
+      opacity: 0.2;
+    }
+    .step { text-align: center; padding: 24px 16px; }
+    .step-num {
+      width: 80px; height: 80px;
+      background: var(--grad-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 auto 22px;
+      box-shadow: 0 8px 28px rgba(59,143,240,0.32);
+    }
+    .step-title { font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+    .step-desc { font-size: 14.5px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .testi-section { padding: 88px 24px; background: var(--bg-white); border-top: 1px solid var(--border); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .t-card {
+      background: var(--bg-page);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .t-card:hover { border-color: var(--blue); box-shadow: var(--shadow-md); }
+    .t-stars { color: var(--yellow); font-size: 17px; letter-spacing: 2px; margin-bottom: 14px; }
+    .t-text {
+      font-size: 14.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-style: italic;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .t-author { display: flex; align-items: center; gap: 12px; }
+    .t-avatar {
+      width: 44px; height: 44px;
+      background: var(--grad-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .t-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+    .t-loc { font-size: 12px; color: var(--text-muted); }
+
+    /* ============================================================
+       MID-PAGE FORM
+    ============================================================ */
+    .mid-form-section {
+      background: var(--bg-alt);
+      padding: 88px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .mid-form-inner { max-width: 560px; margin: 0 auto; }
+    .mid-form-inner .form-card { padding: 44px 40px; }
+
+    /* ============================================================
+       BOOKING SECTION
+    ============================================================ */
+    .booking-section {
+      display: none;
+      padding: 80px 24px;
+      background: var(--bg-page);
+      border-top: 1px solid var(--border);
+    }
+    .booking-section.visible { display: block; }
+    .booking-inner { max-width: 920px; margin: 0 auto; }
+    .booking-confirmed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--green-bg);
+      border: 1px solid var(--green-bd);
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .acuity-wrap {
+      background: var(--bg-white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      min-height: 620px;
+      box-shadow: var(--shadow-md);
+    }
+    .acuity-wrap iframe {
+      width: 100%;
+      min-height: 620px;
+      border: none;
+      display: block;
+    }
+    .acuity-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 620px;
+      gap: 14px;
+      text-align: center;
+      padding: 40px;
+      color: var(--text-mid);
+    }
+    .acuity-placeholder .ph-icon { font-size: 48px; margin-bottom: 6px; }
+    .acuity-placeholder strong { color: var(--text-dark); font-size: 18px; }
+    .acuity-placeholder code {
+      background: var(--bg-alt);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--blue);
+    }
+    .promo-note {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--text-mid);
+    }
+    .promo-code {
+      display: inline-block;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-hi);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 3px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* ============================================================
+       HSA/FSA BADGE
+    ============================================================ */
+    .hsa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-hi);
+      color: var(--blue);
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-section {
+      padding: 88px 24px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+    }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      background: var(--bg-page);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--blue); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 18px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.15s;
+    }
+    .faq-q:hover { background: rgba(59,143,240,0.04); }
+    .faq-plus {
+      width: 26px; height: 26px;
+      border: 1.5px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      line-height: 1;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform 0.28s, border-color 0.2s;
+    }
+    .faq-item.open .faq-plus { transform: rotate(45deg); border-color: var(--blue); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+    .faq-item.open .faq-a { max-height: 320px; }
+    .faq-a-inner {
+      padding: 0 22px 18px;
+      font-size: 14.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       FINAL CTA
+    ============================================================ */
+    .final-cta-section {
+      background: var(--blue);
+      padding: 100px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 350px; height: 350px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .final-cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -60px;
+      width: 280px; height: 280px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .final-cta-section .section-inner { position: relative; z-index: 1; }
+    .final-cta-section .section-label { color: rgba(255,255,255,0.75); }
+    .final-cta-section h2 {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .final-cta-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--blue);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 18px 46px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      transition: transform 0.14s, box-shadow 0.18s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      cursor: pointer;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+    }
+    .cta-sub {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--text-dark);
+      padding: 36px 24px;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .footer-logo { font-size: 20px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+    .footer-logo span { color: var(--blue); }
+    .footer-address { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.18s;
+    }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 44px; }
+      .discover-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .steps-grid::before { display: none; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .mid-form-inner .form-card { padding: 32px 28px; }
+    }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 22px; }
+      .discover-grid { grid-template-columns: 1fr; }
+      .trust-bar-inner { gap: 16px; }
+      .ann-bar { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       ANNOUNCEMENT BAR
+  ============================================================ -->
+  <div class="ann-bar">
+    <span>&#127881; LIMITED TIME &mdash; 10% Off Your First DEXA Scan &mdash; Expires in</span>
+    <span class="timer" id="countdown">--:--:--</span>
+    <a href="#book-now">Claim Now &darr;</a>
+  </div>
+
+  <!-- ============================================================
+       LOGO BAR
+  ============================================================ -->
+  <div class="logo-bar">
+    <div class="logo-wrap">
+      <div class="logo-wordmark">
+        <div class="logo-x">&#10005;</div>
+        <div class="logo-name">Dexa<span>Fit</span></div>
+      </div>
+      <div class="logo-sub">Cleveland</div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- Left: Copy -->
+      <div class="hero-copy">
+        <div class="hero-badge">&#128205; Beachwood, OH &mdash; Cleveland&apos;s Only DexaFit</div>
+        <h1>Finally Know <span class="blue-text">Exactly</span><br>What&apos;s In Your Body.</h1>
+        <p class="hero-sub">
+          The DEXA scan is the gold standard for body composition &mdash; used by elite athletes,
+          physicians, and everyday people serious about their health. Get your precise fat&nbsp;%,
+          lean muscle, bone density, and more in just 10 minutes.
+        </p>
+        <ul class="hero-perks">
+          <li><div class="check-icon">&#10003;</div> True body fat % &mdash; not a scale estimate</li>
+          <li><div class="check-icon">&#10003;</div> Lean muscle mass measured by body region</li>
+          <li><div class="check-icon">&#10003;</div> Visceral fat score (the dangerous kind around your organs)</li>
+          <li><div class="check-icon">&#10003;</div> Bone mineral density reading</li>
+          <li><div class="check-icon">&#10003;</div> Same-day results reviewed with a specialist</li>
+        </ul>
+        <div class="hsa-badge">&#10003; HSA / FSA Eligible</div>
+      </div>
+
+      <!-- Right: Lead Form Card -->
+      <div id="book-now">
+        <div class="form-card">
+          <div class="offer-box">
+            <div class="ob-tag">&#127873; Exclusive Offer</div>
+            <div class="ob-value">10% Off Your First Scan</div>
+            <div class="ob-sub">Discount applied automatically at checkout</div>
+          </div>
+
+          <div class="form-step-label">Step 1 of 2 &mdash; Lock In Your Spot</div>
+
+          <form id="hero-form" novalidate>
+            <div class="form-row">
+              <div class="fg">
+                <label>First Name</label>
+                <input type="text" name="firstName" placeholder="Jane" required>
+              </div>
+              <div class="fg">
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="jane@email.com" required>
+            </div>
+            <div class="fg">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(440) 555-0100" required>
+            </div>
+            <button type="submit" class="btn-primary">
+              Save My Spot &amp; Choose My Time &rarr;
+            </button>
+            <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
+          </form>
+
+          <div class="form-success-state" id="hero-success">
+            <div class="success-circle">&#10003;</div>
+            <div class="success-head">You&apos;re locked in!</div>
+            <div class="success-sub">Scroll down to choose your scan time. Your 10% discount is reserved.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TRUST BAR
+  ============================================================ -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <div><strong>4.9/5</strong> on Google</div>
+      </div>
+      <div class="trust-item">
+        &#127942; <div><strong>Cleveland&apos;s Only</strong> DexaFit Location</div>
+      </div>
+      <div class="trust-item">
+        &#128300; <div><strong>Medical-Grade</strong> DEXA Equipment</div>
+      </div>
+      <div class="trust-item">
+        &#9989; <div><strong>HSA / FSA</strong> Accepted</div>
+      </div>
+      <div class="trust-item">
+        &#128101; <div><strong>500+</strong> Scans Completed</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       WHAT YOU'LL DISCOVER
+  ============================================================ -->
+  <section class="discover-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">What You&apos;ll Discover</div>
+        <h2 class="section-title">Your Body, Measured With Precision.<br>No Guessing. No Estimates.</h2>
+        <p class="section-sub">In a single 10-minute scan you&apos;ll know more about your body than years of scale-watching ever told you.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="discover-grid">
+        <div class="d-card">
+          <div class="d-icon">&#128202;</div>
+          <div class="d-title">True Body Fat %</div>
+          <div class="d-desc">A clinical measurement, not a scale estimate. Broken down by region: arms, legs, trunk, android&nbsp;/ gynoid.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-icon">&#128170;</div>
+          <div class="d-title">Lean Muscle Mass</div>
+          <div class="d-desc">Know exactly how much muscle you carry in each limb. Track real gains (or losses) between scans.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-icon">&#128308;</div>
+          <div class="d-title">Visceral Fat Score</div>
+          <div class="d-desc">The dangerous fat around your organs that BMI and scales completely miss &mdash; the #1 metabolic risk factor.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-icon">&#129460;</div>
+          <div class="d-title">Bone Mineral Density</div>
+          <div class="d-desc">See how your bone health compares to others your age. Critical for long-term injury prevention and longevity.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-icon">&#9878;&#65039;</div>
+          <div class="d-title">Fat-to-Muscle Ratio</div>
+          <div class="d-desc">The number that actually tells you if your diet and training are working &mdash; the truth a scale can never show.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-icon">&#128203;</div>
+          <div class="d-title">Personalized Report</div>
+          <div class="d-desc">A color-coded, detailed report reviewed with your DexaFit specialist before you walk out the door.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HOW IT WORKS
+  ============================================================ -->
+  <section class="hiw-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">The Process</div>
+        <h2 class="section-title">Three Steps to Knowing Your Numbers</h2>
+        <p class="section-sub">From ad click to walking out with your full report &mdash; here&apos;s exactly how it works.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Lock In Your 10% Off</div>
+          <div class="step-desc">Fill out the short form on this page. Takes 30 seconds. Your exclusive discount is instantly reserved.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Choose Your Scan Time</div>
+          <div class="step-desc">Pick a date and time from live availability. Pay securely online. Your 10% off is automatically applied at checkout.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Get Your Results</div>
+          <div class="step-desc">Arrive, scan in about 10 minutes, and leave with a full detailed report reviewed same-day by your specialist.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+  <section class="testi-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Real Clients. Real Results.</div>
+        <h2 class="section-title">Don&apos;t Take Our Word for It</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">&ldquo;I had no idea I was carrying so much visceral fat even though I looked normal. This scan completely changed how I eat and train. My coach now uses my DexaFit data to adjust my programming every 10 weeks.&rdquo;</p>
+          <div class="t-author">
+            <div class="t-avatar">MT</div>
+            <div>
+              <div class="t-name">Mike T.</div>
+              <div class="t-loc">Cleveland, OH</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">&ldquo;Way more accurate than any scale or InBody device. I was losing weight but gaining muscle and the scale wasn&apos;t showing it. The DEXA scan finally showed me what was actually happening. Worth every penny.&rdquo;</p>
+          <div class="t-author">
+            <div class="t-avatar">SM</div>
+            <div>
+              <div class="t-name">Sarah M.</div>
+              <div class="t-loc">Beachwood, OH</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">&ldquo;I was skeptical, but the report blew me away. The specialist walked me through every number. I&apos;ve done 4 scans over 12 months and the progress tracking is the most motivating thing I&apos;ve ever done for my health.&rdquo;</p>
+          <div class="t-author">
+            <div class="t-avatar">JR</div>
+            <div>
+              <div class="t-name">Jason R.</div>
+              <div class="t-loc">Westlake, OH</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MID-PAGE FORM
+  ============================================================ -->
+  <section class="mid-form-section" id="mid-form-section">
+    <div class="mid-form-inner">
+      <div class="section-header">
+        <div class="section-label">Claim Your Offer</div>
+        <h2 class="section-title">Ready to Know Your Numbers?</h2>
+        <p class="section-sub">Fill in your info to lock in your 10% off, then choose your scan time below.</p>
+      </div>
+      <div class="form-card">
+        <div class="offer-box">
+          <div class="ob-tag">&#127873; Exclusive Discount</div>
+          <div class="ob-value">10% Off Your First Scan</div>
+          <div class="ob-sub">Applied automatically at checkout</div>
+        </div>
+        <div class="form-step-label">Step 1 of 2 &mdash; Your Info</div>
+        <form id="mid-form" novalidate>
+          <div class="form-row">
+            <div class="fg">
+              <label>First Name</label>
+              <input type="text" name="firstName" placeholder="Jane" required>
+            </div>
+            <div class="fg">
+              <label>Last Name</label>
+              <input type="text" name="lastName" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="jane@email.com" required>
+          </div>
+          <div class="fg">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(440) 555-0100" required>
+          </div>
+          <button type="submit" class="btn-primary" style="font-size:17px;padding:16px 24px;">
+            Claim My 10% Off &amp; Choose My Time &rarr;
+          </button>
+          <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BOOKING SECTION
+       SETUP:
+       1. Get your Acuity embed URL from:
+          Acuity > Integrations > Embed Scheduler > Copy iframe src
+       2. Create promo code "META10" in Acuity for 10% off.
+       3. Append &promoCode=META10 to your embed src URL.
+       4. Set Acuity confirmation redirect to your dexafit-upsell.html URL.
+       5. Replace ACUITY_IFRAME_URL_HERE below.
+  ============================================================ -->
+  <section class="booking-section" id="booking-section">
+    <div class="booking-inner">
+      <div class="section-header">
+        <div class="section-label">Step 2 of 2</div>
+        <h2 class="section-title">Choose Your Scan Time &#128197;</h2>
+        <p class="section-sub">Select your date and time below. Your 10% discount is already applied at checkout.</p>
+      </div>
+      <div class="booking-confirmed">
+        &#10003;&nbsp; Your spot is reserved &mdash; complete your booking below to confirm.
+      </div>
+      <div class="acuity-wrap" id="acuity-wrap">
+        <div class="acuity-placeholder" id="acuity-placeholder">
+          <div class="ph-icon">&#128197;</div>
+          <strong>Acuity Booking Calendar Goes Here</strong>
+          <p style="max-width:380px;line-height:1.6;color:var(--text-mid);">
+            Replace <code>ACUITY_IFRAME_URL_HERE</code> in the HTML with your<br>
+            Acuity Scheduling embed URL + <code>&amp;promoCode=META10</code>
+          </p>
+        </div>
+        <!--
+          UNCOMMENT when ready and replace src:
+          <iframe
+            src="ACUITY_IFRAME_URL_HERE"
+            title="Book Your DEXA Scan at DexaFit Cleveland"
+            loading="lazy"
+            id="acuity-iframe">
+          </iframe>
+        -->
+      </div>
+      <div class="promo-note">
+        &#128161; 10% discount applied automatically &middot; Promo code: <span class="promo-code">META10</span>
+        &nbsp;&middot;&nbsp; Questions? Call <strong>(440) 467-1138</strong>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FAQ
+  ============================================================ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common Questions</h2>
+        <p class="section-sub">Everything you need to know before you book.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">What exactly is a DEXA scan? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            DEXA (Dual-Energy X-ray Absorptiometry) is the clinical gold standard for body composition measurement. It uses two low-energy X-ray beams to precisely distinguish fat tissue, lean muscle, and bone. It&apos;s the same technology used in medical research and by elite sports organizations &mdash; far more accurate than bioelectrical impedance (InBody) or hydrostatic weighing.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How long does the appointment take? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            The scan itself takes 6&ndash;10 minutes. Plan for 30&ndash;45 minutes total, which includes your results review with your DexaFit specialist. You&apos;ll leave with your full report and a clear picture of your numbers.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Is the radiation safe? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Completely. The radiation exposure is extremely low &mdash; roughly equivalent to the background radiation you receive during a 1&ndash;2 hour flight, and significantly less than a standard chest X-ray. It is FDA-approved and used safely on thousands of people every day.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How is this different from a scale or BMI? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Scales and BMI can&apos;t tell the difference between fat and muscle. Two people can weigh exactly the same and have completely different body compositions. DEXA gives you a precise clinical breakdown of fat, muscle, and bone &mdash; and exactly where each is distributed. It&apos;s the difference between a rough guess and a measurement you can actually act on.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do I need to prepare for the scan? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Keep it simple: wear comfortable, form-fitting clothing (avoid metal zippers or buttons), skip heavy exercise the day before, and stay normally hydrated. No fasting required. If you&apos;re doing repeat scans to track progress, try to schedule at a consistent time of day.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I use HSA or FSA to pay? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes! All DexaFit Cleveland services are HSA and FSA eligible. Use your HSA/FSA card at checkout just like a regular payment card.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">When will I get my results? <div class="faq-plus">+</div></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Immediately. Your results are ready right after the scan. Your specialist will walk you through every number before you leave, explain what it means for your goals, and send you a digital copy of your full report.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FINAL CTA
+  ============================================================ -->
+  <section class="final-cta-section">
+    <div class="section-inner container">
+      <div class="section-label">Don&apos;t Leave Without Your Discount</div>
+      <h2>Ready to Finally Know Your Numbers?</h2>
+      <p>Your 10% off won&apos;t last long. Lock in your spot and get the most precise body composition analysis available in Cleveland.</p>
+      <button class="btn-white" onclick="scrollToForm()">Claim My 10% Off &amp; Book &rarr;</button>
+      <div class="cta-sub">&#128274; Secure Booking &nbsp;&middot;&nbsp; HSA/FSA Eligible &nbsp;&middot;&nbsp; Results Same Day</div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Dexa<span>Fit</span> Cleveland</div>
+      <div class="footer-address">
+        23400 Mercantile Rd, Suite 1, Beachwood, OH 44122<br>
+        (440) 467-1138 &nbsp;&middot;&nbsp; cleveland.dexafit.com
+      </div>
+      <div class="footer-links">
+        <a href="https://cleveland.dexafit.com" target="_blank" rel="noopener">Visit Our Website</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="tel:4404671138">Call Us</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 DexaFit Cleveland &middot; All rights reserved &middot; Powered by Motion Media STL</div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ---- COUNTDOWN TIMER ---- */
+    (function() {
+      var KEY = 'dxf_expiry';
+      var stored = sessionStorage.getItem(KEY);
+      var expiry;
+      if (stored) {
+        expiry = new Date(parseInt(stored, 10));
+      } else {
+        expiry = new Date();
+        expiry.setHours(23, 59, 59, 0);
+        sessionStorage.setItem(KEY, expiry.getTime());
+      }
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function tick() {
+        var diff = expiry - new Date();
+        if (diff <= 0) { document.getElementById('countdown').textContent = '00:00:00'; return; }
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('countdown').textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+      }
+      setInterval(tick, 1000);
+      tick();
+    })();
+
+    /* ---- LEAD CAPTURE ---- */
+    var leadSubmitted = false;
+
+    function submitLead(data) {
+      /*
+       * TODO: Replace with your webhook URL.
+       * Options:
+       *   GHL:       your GoHighLevel webhook URL
+       *   Formspree: https://formspree.io/f/YOUR_ID
+       *   Zapier/Make: your webhook URL
+       */
+      var WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE';
+      if (WEBHOOK_URL !== 'YOUR_WEBHOOK_URL_HERE') {
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.assign({}, data, {
+            source: 'dexafit-meta-landing',
+            offer:  '10% Off First DEXA Scan',
+            timestamp: new Date().toISOString()
+          }))
+        }).catch(function() {});
+      }
+    }
+
+    function revealBooking() {
+      if (leadSubmitted) return;
+      leadSubmitted = true;
+      var midSection = document.getElementById('mid-form-section');
+      if (midSection) midSection.style.display = 'none';
+      var bs = document.getElementById('booking-section');
+      bs.classList.add('visible');
+      setTimeout(function() {
+        bs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 350);
+    }
+
+    function getFormData(form) {
+      var fd = new FormData(form);
+      return {
+        firstName: fd.get('firstName') || '',
+        lastName:  fd.get('lastName')  || '',
+        email:     fd.get('email')     || '',
+        phone:     fd.get('phone')     || ''
+      };
+    }
+
+    function validateForm(form) {
+      var inputs = form.querySelectorAll('input[required]');
+      var valid = true;
+      inputs.forEach(function(inp) {
+        if (!inp.value.trim()) {
+          inp.style.borderColor = '#E53E3E';
+          inp.focus();
+          valid = false;
+        } else {
+          inp.style.borderColor = '';
+        }
+      });
+      return valid;
+    }
+
+    /* Hero form */
+    document.getElementById('hero-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!validateForm(this)) return;
+      submitLead(getFormData(this));
+      this.style.display = 'none';
+      document.getElementById('hero-success').style.display = 'block';
+      revealBooking();
+    });
+
+    /* Mid-page form */
+    document.getElementById('mid-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!validateForm(this)) return;
+      submitLead(getFormData(this));
+      revealBooking();
+    });
+
+    /* Final CTA scroll */
+    function scrollToForm() {
+      if (leadSubmitted) {
+        document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        var mid = document.getElementById('mid-form-section');
+        var target = (mid && mid.style.display !== 'none') ? mid : document.getElementById('book-now');
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    /* ---- FAQ ACCORDION ---- */
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    /* ---- ACUITY POST-BOOKING REDIRECT ---- */
+    window.addEventListener('message', function(e) {
+      if (e.data && (
+        e.data === 'booked' ||
+        (typeof e.data === 'object' && e.data.type && e.data.type.toLowerCase().includes('book'))
+      )) {
+        window.location.href = 'dexafit-upsell.html';
+      }
+    });
+  </script>
+
+</body>
+</html>

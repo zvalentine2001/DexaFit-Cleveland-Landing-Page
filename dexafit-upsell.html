@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You&apos;re Booked! Special Offer | DexaFit Cleveland</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DESIGN TOKENS — DexaFit Cleveland Brand
+    ============================================================ */
+    :root {
+      --blue:       #3B8FF0;
+      --blue-dk:    #2A7ADE;
+      --blue-lt:    #5BA5F5;
+      --blue-glow:  rgba(59,143,240,0.12);
+      --blue-hi:    rgba(59,143,240,0.35);
+
+      --bg-page:    #F4F6FA;
+      --bg-alt:     #EBF0F8;
+      --bg-white:   #FFFFFF;
+      --card:       #FFFFFF;
+
+      --border:     #D5DCEA;
+      --border-hi:  rgba(59,143,240,0.38);
+
+      --text-dark:  #1A2235;
+      --text-mid:   #4A5B72;
+      --text-muted: #8A9BB5;
+
+      --ann-bg:     #2A2A2A;
+      --yellow:     #F5A623;
+      --green:      #00B87A;
+      --green-bg:   rgba(0,184,122,0.1);
+      --green-bd:   rgba(0,184,122,0.3);
+      --orange:     #F97316;
+      --orange-bg:  rgba(249,115,22,0.1);
+      --orange-bd:  rgba(249,115,22,0.3);
+
+      --grad-blue:  linear-gradient(135deg, #3B8FF0 0%, #2A7ADE 100%);
+      --grad-green: linear-gradient(135deg, #00B87A 0%, #009963 100%);
+
+      --shadow-sm:  0 2px 8px rgba(26,34,53,0.08);
+      --shadow-md:  0 8px 24px rgba(26,34,53,0.1);
+      --shadow-lg:  0 20px 48px rgba(26,34,53,0.12);
+      --shadow-btn: 0 8px 24px rgba(59,143,240,0.32);
+
+      --radius-sm:  8px;
+      --radius-md:  12px;
+      --radius-lg:  18px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============================================================
+       LOGO BAR
+    ============================================================ */
+    .logo-bar {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .logo-wordmark { display: flex; align-items: center; gap: 6px; }
+    .logo-x {
+      width: 34px; height: 34px;
+      background: var(--grad-blue);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900; color: #fff;
+    }
+    .logo-name { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; color: var(--text-dark); }
+    .logo-name span { color: var(--blue); }
+    .logo-sub { font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
+
+    /* ============================================================
+       CONFIRMATION HERO
+    ============================================================ */
+    .confirm-hero {
+      background: linear-gradient(160deg, #EEF3FC 0%, #F4F6FA 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 24px 56px;
+      text-align: center;
+    }
+    .confetti-wrap {
+      font-size: 40px;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .confirm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-bg);
+      border: 1px solid var(--green-bd);
+      color: var(--green);
+      padding: 7px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .confirm-hero h1 {
+      font-size: clamp(28px, 4.5vw, 46px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .confirm-hero h1 span { color: var(--blue); }
+    .confirm-hero p {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .confirm-details {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 28px;
+      box-shadow: var(--shadow-sm);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cd-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+    .cd-item span { color: var(--text-dark); }
+
+    /* ============================================================
+       UPSELL SECTION
+    ============================================================ */
+    .upsell-section {
+      padding: 72px 24px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .one-time-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange-bg);
+      border: 1px solid var(--orange-bd);
+      color: var(--orange);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .upsell-section h2 {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .upsell-section h2 span { color: var(--blue); }
+    .upsell-section .lead {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* ============================================================
+       OFFER CARD
+    ============================================================ */
+    .offer-card {
+      background: var(--bg-white);
+      border: 2px solid var(--blue);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(59,143,240,0.15);
+      margin-bottom: 28px;
+    }
+    .offer-card-header {
+      background: var(--grad-blue);
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .offer-card-header h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .offer-card-header .discount-pill {
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .offer-card-body { padding: 28px; }
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .price-main {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+    .price-per {
+      font-size: 16px;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+    .price-original {
+      font-size: 18px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .price-save {
+      background: var(--green-bg);
+      border: 1px solid var(--green-bd);
+      color: var(--green);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .bundle-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .bundle-perks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .perk-check {
+      width: 22px; height: 22px;
+      background: var(--grad-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 1px;
+      box-shadow: 0 3px 10px rgba(59,143,240,0.3);
+    }
+    .perk-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .btn-upsell {
+      display: block;
+      width: 100%;
+      background: var(--grad-blue);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 18px 24px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      transition: opacity 0.18s, transform 0.12s, box-shadow 0.18s;
+      box-shadow: var(--shadow-btn);
+      font-family: inherit;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-upsell:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(59,143,240,0.42);
+    }
+    .upsell-trust {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* ============================================================
+       WHY TRACK SECTION
+    ============================================================ */
+    .why-track {
+      background: var(--bg-white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .why-track h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .track-item {
+      text-align: center;
+      padding: 16px 12px;
+      background: var(--bg-page);
+      border-radius: var(--radius-sm);
+    }
+    .track-icon { font-size: 26px; margin-bottom: 8px; }
+    .track-title { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+    .track-desc { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
+    /* ============================================================
+       TESTIMONIAL
+    ============================================================ */
+    .upsell-testi {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    .upsell-testi .t-stars { color: var(--yellow); font-size: 15px; letter-spacing: 2px; margin-bottom: 10px; }
+    .upsell-testi .t-text {
+      font-size: 14.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+    .upsell-testi .t-author { display: flex; align-items: center; gap: 10px; }
+    .upsell-testi .t-avatar {
+      width: 38px; height: 38px;
+      background: var(--grad-blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px; color: #fff; flex-shrink: 0;
+    }
+    .upsell-testi .t-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+    .upsell-testi .t-loc { font-size: 12px; color: var(--text-muted); }
+
+    /* ============================================================
+       SKIP LINK
+    ============================================================ */
+    .skip-wrap {
+      text-align: center;
+      padding: 8px 0 48px;
+    }
+    .skip-link {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.18s;
+    }
+    .skip-link:hover { color: var(--text-mid); }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--text-dark);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .footer-logo { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+    .footer-logo span { color: var(--blue); }
+    .footer-address { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); transition: color 0.18s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 600px) {
+      .confirm-details { flex-direction: column; gap: 10px; }
+      .track-grid { grid-template-columns: 1fr; }
+      .offer-card-header { flex-direction: column; align-items: flex-start; }
+      .price-main { font-size: 38px; }
+      .upsell-section { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       LOGO BAR
+  ============================================================ -->
+  <div class="logo-bar">
+    <div class="logo-wrap">
+      <div class="logo-wordmark">
+        <div class="logo-x">&#10005;</div>
+        <div class="logo-name">Dexa<span>Fit</span></div>
+      </div>
+      <div class="logo-sub">Cleveland</div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       BOOKING CONFIRMATION HERO
+  ============================================================ -->
+  <div class="confirm-hero">
+    <div class="confetti-wrap">&#127881;&#127881;</div>
+    <div class="confirm-badge">&#10003; Booking Confirmed</div>
+    <h1>You&apos;re Booked &amp; <span>Ready to Go!</span></h1>
+    <p>
+      Check your email for your appointment details and pre-scan instructions.
+      We&apos;re excited to get you your numbers &mdash; we think you&apos;ll be surprised by what you learn.
+    </p>
+    <div class="confirm-details">
+      <div class="cd-item">&#128205; <span>23400 Mercantile Rd, Suite 1, Beachwood</span></div>
+      <div class="cd-item">&#128222; <span>(440) 467-1138</span></div>
+      <div class="cd-item">&#9200; <span>Plan for ~30-45 min total</span></div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       UPSELL SECTION
+  ============================================================ -->
+  <div class="upsell-section">
+
+    <div class="one-time-label">&#9889; One-Time Offer &mdash; Only Available Right Now</div>
+    <h2>Track Your Progress &amp;<br><span>Double Your Results</span></h2>
+    <p class="lead">
+      One scan tells you where you <em>are</em>. Repeat scans tell you where you&apos;re <em>going</em>.
+      Our clients who track every 8&ndash;12 weeks see dramatically better results &mdash; because
+      data-driven progress beats guesswork every time. Lock in your 3-scan bundle today at our
+      best rate, only available right now.
+    </p>
+
+    <!-- WHY TRACK -->
+    <div class="why-track">
+      <h4>&#128200; Why Tracking Changes Everything</h4>
+      <div class="track-grid">
+        <div class="track-item">
+          <div class="track-icon">&#127919;</div>
+          <div class="track-title">Stay Accountable</div>
+          <div class="track-desc">Knowing you have a scan scheduled keeps your diet and training on track.</div>
+        </div>
+        <div class="track-item">
+          <div class="track-icon">&#128200;</div>
+          <div class="track-title">See Real Progress</div>
+          <div class="track-desc">Watch your fat drop and muscle grow with data, not just a scale number.</div>
+        </div>
+        <div class="track-item">
+          <div class="track-icon">&#129514;</div>
+          <div class="track-title">Optimize Faster</div>
+          <div class="track-desc">Adjust your nutrition and training based on real body composition data.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <div class="upsell-testi">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">
+        &ldquo;I started tracking every 10 weeks and the data completely changed how I train.
+        In 9 months I dropped 14 lbs of fat and gained 6 lbs of muscle &mdash; numbers I never
+        would have seen on a regular scale. The 3-scan bundle was the best investment I&apos;ve
+        made in my health.&rdquo;
+      </p>
+      <div class="t-author">
+        <div class="t-avatar">JR</div>
+        <div>
+          <div class="t-name">Jason R.</div>
+          <div class="t-loc">Westlake, OH &mdash; 4-time DexaFit client</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFER CARD -->
+    <!--
+      SETUP: Update the pricing and link below to match your Acuity
+      bundle package. Create a "3-Scan Bundle" appointment type in
+      Acuity and set a discounted price (e.g., 20% off 3 scans).
+      Link the CTA button to that appointment type.
+    -->
+    <div class="offer-card">
+      <div class="offer-card-header">
+        <h3>&#128300; 3-Scan Progress Bundle</h3>
+        <div class="discount-pill">Best Value &mdash; Save 20%</div>
+      </div>
+      <div class="offer-card-body">
+        <div class="price-display">
+          <div class="price-main">$XXX</div>
+          <div class="price-per">for 3 scans</div>
+          <div class="price-original">$XXX value</div>
+          <div class="price-save">You save $XX</div>
+        </div>
+
+        <ul class="bundle-perks">
+          <li>
+            <div class="perk-check">&#10003;</div>
+            <div>
+              <strong>3 Full DEXA Body Composition Scans</strong>
+              <div class="perk-desc">Use anytime over the next 12 months &mdash; space them 8&ndash;12 weeks apart for best results.</div>
+            </div>
+          </li>
+          <li>
+            <div class="perk-check">&#10003;</div>
+            <div>
+              <strong>Progress Comparison Reports</strong>
+              <div class="perk-desc">Side-by-side comparison of your results across each scan, so you can see exactly how your body is changing.</div>
+            </div>
+          </li>
+          <li>
+            <div class="perk-check">&#10003;</div>
+            <div>
+              <strong>Priority Scheduling</strong>
+              <div class="perk-desc">Bundle clients get early access to booking slots before they open to the public.</div>
+            </div>
+          </li>
+          <li>
+            <div class="perk-check">&#10003;</div>
+            <div>
+              <strong>3 Specialist Reviews Included</strong>
+              <div class="perk-desc">Each scan includes a same-day results review with your DexaFit specialist.</div>
+            </div>
+          </li>
+          <li>
+            <div class="perk-check">&#10003;</div>
+            <div>
+              <strong>HSA / FSA Eligible</strong>
+              <div class="perk-desc">Pay with your HSA or FSA card &mdash; this is a qualified medical expense.</div>
+            </div>
+          </li>
+        </ul>
+
+        <!--
+          Replace href with your Acuity 3-scan bundle URL.
+          Example: https://app.acuityscheduling.com/schedule.php?owner=XXXXX&appointmentType=BUNDLE_ID
+        -->
+        <a href="ACUITY_BUNDLE_URL_HERE" class="btn-upsell">
+          Yes! Add My 3-Scan Progress Bundle &rarr;
+        </a>
+        <div class="upsell-trust">&#128274; Secure checkout &middot; HSA/FSA accepted &middot; Valid for 12 months</div>
+      </div>
+    </div>
+
+    <!-- SKIP LINK -->
+    <div class="skip-wrap">
+      <a href="https://cleveland.dexafit.com" class="skip-link">
+        No thanks &mdash; I&apos;ll stick with my single scan for now
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Dexa<span>Fit</span> Cleveland</div>
+      <div class="footer-address">
+        23400 Mercantile Rd, Suite 1, Beachwood, OH 44122<br>
+        (440) 467-1138 &nbsp;&middot;&nbsp; cleveland.dexafit.com
+      </div>
+      <div class="footer-links">
+        <a href="https://cleveland.dexafit.com" target="_blank" rel="noopener">Visit Our Website</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="tel:4404671138">Call Us</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 DexaFit Cleveland &middot; All rights reserved &middot; Powered by Motion Media STL</div>
+    </div>
+  </footer>
+
+</body>
+</html>
