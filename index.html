@@ -1055,8 +1055,8 @@
           <div class="ob-sub">Applied automatically at checkout</div>
         </div>
         <p style="color:var(--text-mid);margin:16px 0 24px;">Ready to lock in your discount and choose your scan time?</p>
-        <button class="btn-primary" onclick="scrollToForm()" style="font-size:17px;padding:16px 24px;">
-          Claim My 10% Off &amp; Choose My Time &rarr;
+        <button class="btn-primary" onclick="revealBooking()" style="font-size:17px;padding:16px 24px;">
+          Choose My Scan Time &rarr;
         </button>
         <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
       </div>
@@ -1278,23 +1278,20 @@
     window.addEventListener('message', function(e) {
       if (!e.data) return;
       var d = e.data;
+      var s = typeof d === 'string' ? d : JSON.stringify(d);
 
-      // GHL fires this when form is submitted
+      // GHL / LeadConnector form submitted (catches all known formats)
       if (
-        d === 'form_submitted' ||
-        (typeof d === 'string' && d.toLowerCase().includes('submit')) ||
-        (typeof d === 'object' && d.type && (
-          d.type === 'form_submitted' ||
-          d.type === 'formSubmitted' ||
-          d.type.toLowerCase().includes('submit')
-        )) ||
-        (typeof d === 'object' && d.event && d.event.toLowerCase().includes('submit'))
+        s.toLowerCase().includes('submit') ||
+        s.toLowerCase().includes('lcform') ||
+        s.toLowerCase().includes('leadconnector') ||
+        (typeof d === 'object' && d.type && d.type.toLowerCase().includes('form'))
       ) {
         revealBooking();
         return;
       }
 
-      // GHL/Acuity post-booking redirect to upsell page
+      // Post-booking redirect to upsell page
       if (
         d === 'booked' ||
         (typeof d === 'object' && d.type && d.type.toLowerCase().includes('book'))
@@ -1302,6 +1299,41 @@
         window.location.href = 'dexafit-upsell.html';
       }
     });
+
+    /* ---- IFRAME HEIGHT CHANGE WATCHER (fallback form-submit detection) ---- */
+    // GHL's embed script resizes the iframe after submission (form → thank-you msg).
+    // When height drops noticeably, we treat it as a form submission.
+    (function() {
+      var iframe = document.getElementById('ghl-form-iframe');
+      if (!iframe) return;
+      var lastHeight = 0;
+      var submitted = false;
+      var observer = new MutationObserver(function() {
+        if (submitted) return;
+        var h = iframe.offsetHeight || parseInt(iframe.style.height) || 0;
+        if (lastHeight > 200 && h > 0 && h < lastHeight * 0.85) {
+          submitted = true;
+          revealBooking();
+        }
+        if (h > 0) lastHeight = h;
+      });
+      observer.observe(iframe, { attributes: true, attributeFilter: ['style', 'height'] });
+      // Also poll via resize messages from GHL embed
+      window.addEventListener('message', function(e) {
+        if (!e.data || submitted) return;
+        var s = typeof e.data === 'string' ? e.data : '';
+        // iFrameResizer format: [iFrameSizer]id:height:...
+        if (s.startsWith('[iFrameSizer]')) {
+          var parts = s.split(':');
+          var h = parseInt(parts[1]) || 0;
+          if (lastHeight > 200 && h > 0 && h < lastHeight * 0.85) {
+            submitted = true;
+            revealBooking();
+          }
+          if (h > 0) lastHeight = h;
+        }
+      });
+    })();
 
     /* ---- FAQ ACCORDION ---- */
     document.querySelectorAll('.faq-q').forEach(function(btn) {
@@ -1313,15 +1345,6 @@
       });
     });
 
-    /* ---- ACUITY POST-BOOKING REDIRECT ---- */
-    window.addEventListener('message', function(e) {
-      if (e.data && (
-        e.data === 'booked' ||
-        (typeof e.data === 'object' && e.data.type && e.data.type.toLowerCase().includes('book'))
-      )) {
-        window.location.href = 'dexafit-upsell.html';
-      }
-    });
   </script>
 
   <script src="https://link.msgsndr.com/js/form_embed.js"></script>
