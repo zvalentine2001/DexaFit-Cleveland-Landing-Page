@@ -189,7 +189,7 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 500px;
       gap: 64px;
       align-items: center;
       position: relative;
@@ -850,37 +850,23 @@
         <div class="hsa-badge">&#10003; HSA / FSA Eligible</div>
       </div>
 
-      <!-- Right: Lead Form Card -->
+      <!-- Right: Booking Calendar -->
       <div id="book-now">
-        <div class="form-card">
-          <div class="offer-box">
-            <div class="ob-tag">&#127873; Exclusive Offer</div>
-            <div class="ob-value">10% Off Your First Scan</div>
-            <div class="ob-sub">Discount applied automatically at checkout</div>
-          </div>
-
-          <div class="form-step-label">Step 1 of 2 &mdash; Lock In Your Spot</div>
-
-          <!-- GHL Form Embed -->
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/sg0Nec09BQLcsviQsATk"
-            style="width:100%;min-height:500px;border:none;border-radius:8px;display:block;"
-            id="ghl-form-iframe"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="TEST - GC Landing Page Form"
-            data-height="undefined"
-            data-layout-iframe-id="inline-sg0Nec09BQLcsviQsATk"
-            data-form-id="sg0Nec09BQLcsviQsATk"
-            title="TEST - GC Landing Page Form"
-          ></iframe>
-          <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
+        <div class="offer-box" style="margin-bottom:16px;">
+          <div class="ob-tag">&#127873; Exclusive Offer &mdash; Limited Time</div>
+          <div class="ob-value">10% Off Your First Scan</div>
+          <div class="ob-sub">Discount applied automatically at checkout &nbsp;&middot;&nbsp; <strong style="color:var(--text-dark);">$185 &rarr; $166.50</strong></div>
         </div>
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/booking/zJIkxboVgAPkp7kauyeJ?coupon=NEW10"
+            style="width:100%;min-height:680px;border:none;overflow:hidden;display:block;"
+            scrolling="no"
+            id="ghl-calendar-iframe"
+            title="Book Your DEXA Scan at DexaFit Cleveland">
+          </iframe>
+        </div>
+        <div class="form-trust" style="margin-top:10px;">&#128274; Secure booking &nbsp;&middot;&nbsp; HSA/FSA accepted &nbsp;&middot;&nbsp; Cancel anytime</div>
       </div>
 
     </div>
@@ -1038,67 +1024,10 @@
   </section>
 
 
-  <!-- ============================================================
-       MID-PAGE FORM
-  ============================================================ -->
-  <section class="mid-form-section" id="mid-form-section">
-    <div class="mid-form-inner">
-      <div class="section-header">
-        <div class="section-label">Claim Your Offer</div>
-        <h2 class="section-title">Ready to Know Your Numbers?</h2>
-        <p class="section-sub">Fill in your info to lock in your 10% off, then choose your scan time below.</p>
-      </div>
-      <div class="form-card" style="text-align:center;padding:40px 32px;">
-        <div class="offer-box">
-          <div class="ob-tag">&#127873; Exclusive Discount</div>
-          <div class="ob-value">10% Off Your First Scan</div>
-          <div class="ob-sub">Applied automatically at checkout</div>
-        </div>
-        <p style="color:var(--text-mid);margin:16px 0 24px;">Ready to lock in your discount and choose your scan time?</p>
-        <button class="btn-primary" onclick="revealBooking()" style="font-size:17px;padding:16px 24px;">
-          Choose My Scan Time &rarr;
-        </button>
-        <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
-      </div>
-    </div>
-  </section>
 
 
-  <!-- ============================================================
-       BOOKING SECTION
-       SETUP:
-       1. Get your Acuity embed URL from:
-          Acuity > Integrations > Embed Scheduler > Copy iframe src
-       2. Create promo code "META10" in Acuity for 10% off.
-       3. Append &promoCode=META10 to your embed src URL.
-       4. Set Acuity confirmation redirect to your dexafit-upsell.html URL.
-       5. Replace ACUITY_IFRAME_URL_HERE below.
-  ============================================================ -->
-  <section class="booking-section" id="booking-section">
-    <div class="booking-inner">
-      <div class="section-header">
-        <div class="section-label">Step 2 of 2</div>
-        <h2 class="section-title">Choose Your Scan Time &#128197;</h2>
-        <p class="section-sub">Select your date and time below. Your 10% discount is already applied at checkout.</p>
-      </div>
-      <div class="booking-confirmed">
-        &#10003;&nbsp; Your spot is reserved &mdash; complete your booking below to confirm.
-      </div>
-      <div class="acuity-wrap" id="acuity-wrap">
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/booking/zJIkxboVgAPkp7kauyeJ"
-          style="width:100%;min-height:700px;border:none;overflow:hidden;display:block;"
-          scrolling="no"
-          id="zJIkxboVgAPkp7kauyeJ_1780932308116"
-          title="Book Your DEXA Scan at DexaFit Cleveland">
-        </iframe>
-      </div>
-      <div class="promo-note">
-        &#128161; 10% discount applied automatically &middot; Promo code: <span class="promo-code">META10</span>
-        &nbsp;&middot;&nbsp; Questions? Call <strong>(440) 467-1138</strong>
-      </div>
-    </div>
-  </section>
+
+
 
 
   <!-- ============================================================
@@ -1241,8 +1170,8 @@
         fbclid = sessionStorage.getItem('fbclid');
       }
       if (fbclid) {
-        // Append fbclid as URL param to GHL form iframe so it auto-populates the hidden field
-        var iframe = document.getElementById('ghl-form-iframe');
+        // Pass fbclid to GHL calendar iframe via URL param
+        var iframe = document.getElementById('ghl-calendar-iframe');
         if (iframe) {
           var src = iframe.src;
           iframe.src = src + (src.includes('?') ? '&' : '?') + 'fbclid=' + encodeURIComponent(fbclid);
@@ -1250,48 +1179,16 @@
       }
     })();
 
-    /* ---- FORM SUBMISSION + BOOKING REVEAL ---- */
-    var leadSubmitted = false;
-
-    function revealBooking() {
-      if (leadSubmitted) return;
-      leadSubmitted = true;
-      var midSection = document.getElementById('mid-form-section');
-      if (midSection) midSection.style.display = 'none';
-      var bs = document.getElementById('booking-section');
-      bs.classList.add('visible');
-      setTimeout(function() {
-        bs.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 500);
-    }
-
     /* Final CTA scroll */
     function scrollToForm() {
-      if (leadSubmitted) {
-        document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        document.getElementById('book-now').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      document.getElementById('book-now').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    /* ---- GHL FORM SUBMISSION LISTENER ---- */
+    /* ---- POST-BOOKING UPSELL REDIRECT ---- */
+    // GHL fires a postMessage when booking is confirmed — redirect to upsell page
     window.addEventListener('message', function(e) {
       if (!e.data) return;
       var d = e.data;
-      var s = typeof d === 'string' ? d : JSON.stringify(d);
-
-      // GHL / LeadConnector form submitted (catches all known formats)
-      if (
-        s.toLowerCase().includes('submit') ||
-        s.toLowerCase().includes('lcform') ||
-        s.toLowerCase().includes('leadconnector') ||
-        (typeof d === 'object' && d.type && d.type.toLowerCase().includes('form'))
-      ) {
-        revealBooking();
-        return;
-      }
-
-      // Post-booking redirect to upsell page
       if (
         d === 'booked' ||
         (typeof d === 'object' && d.type && d.type.toLowerCase().includes('book'))
@@ -1299,41 +1196,6 @@
         window.location.href = 'dexafit-upsell.html';
       }
     });
-
-    /* ---- IFRAME HEIGHT CHANGE WATCHER (fallback form-submit detection) ---- */
-    // GHL's embed script resizes the iframe after submission (form → thank-you msg).
-    // When height drops noticeably, we treat it as a form submission.
-    (function() {
-      var iframe = document.getElementById('ghl-form-iframe');
-      if (!iframe) return;
-      var lastHeight = 0;
-      var submitted = false;
-      var observer = new MutationObserver(function() {
-        if (submitted) return;
-        var h = iframe.offsetHeight || parseInt(iframe.style.height) || 0;
-        if (lastHeight > 200 && h > 0 && h < lastHeight * 0.85) {
-          submitted = true;
-          revealBooking();
-        }
-        if (h > 0) lastHeight = h;
-      });
-      observer.observe(iframe, { attributes: true, attributeFilter: ['style', 'height'] });
-      // Also poll via resize messages from GHL embed
-      window.addEventListener('message', function(e) {
-        if (!e.data || submitted) return;
-        var s = typeof e.data === 'string' ? e.data : '';
-        // iFrameResizer format: [iFrameSizer]id:height:...
-        if (s.startsWith('[iFrameSizer]')) {
-          var parts = s.split(':');
-          var h = parseInt(parts[1]) || 0;
-          if (lastHeight > 200 && h > 0 && h < lastHeight * 0.85) {
-            submitted = true;
-            revealBooking();
-          }
-          if (h > 0) lastHeight = h;
-        }
-      });
-    })();
 
     /* ---- FAQ ACCORDION ---- */
     document.querySelectorAll('.faq-q').forEach(function(btn) {
