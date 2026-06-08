@@ -861,36 +861,25 @@
 
           <div class="form-step-label">Step 1 of 2 &mdash; Lock In Your Spot</div>
 
-          <form id="hero-form" novalidate>
-            <div class="form-row">
-              <div class="fg">
-                <label>First Name</label>
-                <input type="text" name="firstName" placeholder="Jane" required>
-              </div>
-              <div class="fg">
-                <label>Last Name</label>
-                <input type="text" name="lastName" placeholder="Smith" required>
-              </div>
-            </div>
-            <div class="fg">
-              <label>Email Address</label>
-              <input type="email" name="email" placeholder="jane@email.com" required>
-            </div>
-            <div class="fg">
-              <label>Phone Number</label>
-              <input type="tel" name="phone" placeholder="(440) 555-0100" required>
-            </div>
-            <button type="submit" class="btn-primary">
-              Save My Spot &amp; Choose My Time &rarr;
-            </button>
-            <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
-          </form>
-
-          <div class="form-success-state" id="hero-success">
-            <div class="success-circle">&#10003;</div>
-            <div class="success-head">You&apos;re locked in!</div>
-            <div class="success-sub">Scroll down to choose your scan time. Your 10% discount is reserved.</div>
-          </div>
+          <!-- GHL Form Embed -->
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/sg0Nec09BQLcsviQsATk"
+            style="width:100%;min-height:500px;border:none;border-radius:8px;display:block;"
+            id="ghl-form-iframe"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="TEST - GC Landing Page Form"
+            data-height="undefined"
+            data-layout-iframe-id="inline-sg0Nec09BQLcsviQsATk"
+            data-form-id="sg0Nec09BQLcsviQsATk"
+            title="TEST - GC Landing Page Form"
+          ></iframe>
+          <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
         </div>
       </div>
 
@@ -1059,37 +1048,17 @@
         <h2 class="section-title">Ready to Know Your Numbers?</h2>
         <p class="section-sub">Fill in your info to lock in your 10% off, then choose your scan time below.</p>
       </div>
-      <div class="form-card">
+      <div class="form-card" style="text-align:center;padding:40px 32px;">
         <div class="offer-box">
           <div class="ob-tag">&#127873; Exclusive Discount</div>
           <div class="ob-value">10% Off Your First Scan</div>
           <div class="ob-sub">Applied automatically at checkout</div>
         </div>
-        <div class="form-step-label">Step 1 of 2 &mdash; Your Info</div>
-        <form id="mid-form" novalidate>
-          <div class="form-row">
-            <div class="fg">
-              <label>First Name</label>
-              <input type="text" name="firstName" placeholder="Jane" required>
-            </div>
-            <div class="fg">
-              <label>Last Name</label>
-              <input type="text" name="lastName" placeholder="Smith" required>
-            </div>
-          </div>
-          <div class="fg">
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="jane@email.com" required>
-          </div>
-          <div class="fg">
-            <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="(440) 555-0100" required>
-          </div>
-          <button type="submit" class="btn-primary" style="font-size:17px;padding:16px 24px;">
-            Claim My 10% Off &amp; Choose My Time &rarr;
-          </button>
-          <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
-        </form>
+        <p style="color:var(--text-mid);margin:16px 0 24px;">Ready to lock in your discount and choose your scan time?</p>
+        <button class="btn-primary" onclick="scrollToForm()" style="font-size:17px;padding:16px 24px;">
+          Claim My 10% Off &amp; Choose My Time &rarr;
+        </button>
+        <div class="form-trust">&#128274; 100% secure &middot; No spam &middot; Unsubscribe anytime</div>
       </div>
     </div>
   </section>
@@ -1116,23 +1085,13 @@
         &#10003;&nbsp; Your spot is reserved &mdash; complete your booking below to confirm.
       </div>
       <div class="acuity-wrap" id="acuity-wrap">
-        <div class="acuity-placeholder" id="acuity-placeholder">
-          <div class="ph-icon">&#128197;</div>
-          <strong>Acuity Booking Calendar Goes Here</strong>
-          <p style="max-width:380px;line-height:1.6;color:var(--text-mid);">
-            Replace <code>ACUITY_IFRAME_URL_HERE</code> in the HTML with your<br>
-            Acuity Scheduling embed URL + <code>&amp;promoCode=META10</code>
-          </p>
-        </div>
-        <!--
-          UNCOMMENT when ready and replace src:
-          <iframe
-            src="ACUITY_IFRAME_URL_HERE"
-            title="Book Your DEXA Scan at DexaFit Cleveland"
-            loading="lazy"
-            id="acuity-iframe">
-          </iframe>
-        -->
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/booking/zJIkxboVgAPkp7kauyeJ"
+          style="width:100%;min-height:700px;border:none;overflow:hidden;display:block;"
+          scrolling="no"
+          id="zJIkxboVgAPkp7kauyeJ_1780932308116"
+          title="Book Your DEXA Scan at DexaFit Cleveland">
+        </iframe>
       </div>
       <div class="promo-note">
         &#128161; 10% discount applied automatically &middot; Promo code: <span class="promo-code">META10</span>
@@ -1272,30 +1231,27 @@
       tick();
     })();
 
-    /* ---- LEAD CAPTURE ---- */
-    var leadSubmitted = false;
-
-    function submitLead(data) {
-      /*
-       * TODO: Replace with your webhook URL.
-       * Options:
-       *   GHL:       your GoHighLevel webhook URL
-       *   Formspree: https://formspree.io/f/YOUR_ID
-       *   Zapier/Make: your webhook URL
-       */
-      var WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE';
-      if (WEBHOOK_URL !== 'YOUR_WEBHOOK_URL_HERE') {
-        fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(Object.assign({}, data, {
-            source: 'dexafit-meta-landing',
-            offer:  '10% Off First DEXA Scan',
-            timestamp: new Date().toISOString()
-          }))
-        }).catch(function() {});
+    /* ---- FBCLID CAPTURE ---- */
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var fbclid = params.get('fbclid');
+      if (fbclid) {
+        sessionStorage.setItem('fbclid', fbclid);
+      } else {
+        fbclid = sessionStorage.getItem('fbclid');
       }
-    }
+      if (fbclid) {
+        // Append fbclid as URL param to GHL form iframe so it auto-populates the hidden field
+        var iframe = document.getElementById('ghl-form-iframe');
+        if (iframe) {
+          var src = iframe.src;
+          iframe.src = src + (src.includes('?') ? '&' : '?') + 'fbclid=' + encodeURIComponent(fbclid);
+        }
+      }
+    })();
+
+    /* ---- FORM SUBMISSION + BOOKING REVEAL ---- */
+    var leadSubmitted = false;
 
     function revealBooking() {
       if (leadSubmitted) return;
@@ -1306,62 +1262,46 @@
       bs.classList.add('visible');
       setTimeout(function() {
         bs.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 350);
+      }, 500);
     }
-
-    function getFormData(form) {
-      var fd = new FormData(form);
-      return {
-        firstName: fd.get('firstName') || '',
-        lastName:  fd.get('lastName')  || '',
-        email:     fd.get('email')     || '',
-        phone:     fd.get('phone')     || ''
-      };
-    }
-
-    function validateForm(form) {
-      var inputs = form.querySelectorAll('input[required]');
-      var valid = true;
-      inputs.forEach(function(inp) {
-        if (!inp.value.trim()) {
-          inp.style.borderColor = '#E53E3E';
-          inp.focus();
-          valid = false;
-        } else {
-          inp.style.borderColor = '';
-        }
-      });
-      return valid;
-    }
-
-    /* Hero form */
-    document.getElementById('hero-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!validateForm(this)) return;
-      submitLead(getFormData(this));
-      this.style.display = 'none';
-      document.getElementById('hero-success').style.display = 'block';
-      revealBooking();
-    });
-
-    /* Mid-page form */
-    document.getElementById('mid-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!validateForm(this)) return;
-      submitLead(getFormData(this));
-      revealBooking();
-    });
 
     /* Final CTA scroll */
     function scrollToForm() {
       if (leadSubmitted) {
         document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
-        var mid = document.getElementById('mid-form-section');
-        var target = (mid && mid.style.display !== 'none') ? mid : document.getElementById('book-now');
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById('book-now').scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
+
+    /* ---- GHL FORM SUBMISSION LISTENER ---- */
+    window.addEventListener('message', function(e) {
+      if (!e.data) return;
+      var d = e.data;
+
+      // GHL fires this when form is submitted
+      if (
+        d === 'form_submitted' ||
+        (typeof d === 'string' && d.toLowerCase().includes('submit')) ||
+        (typeof d === 'object' && d.type && (
+          d.type === 'form_submitted' ||
+          d.type === 'formSubmitted' ||
+          d.type.toLowerCase().includes('submit')
+        )) ||
+        (typeof d === 'object' && d.event && d.event.toLowerCase().includes('submit'))
+      ) {
+        revealBooking();
+        return;
+      }
+
+      // GHL/Acuity post-booking redirect to upsell page
+      if (
+        d === 'booked' ||
+        (typeof d === 'object' && d.type && d.type.toLowerCase().includes('book'))
+      ) {
+        window.location.href = 'dexafit-upsell.html';
+      }
+    });
 
     /* ---- FAQ ACCORDION ---- */
     document.querySelectorAll('.faq-q').forEach(function(btn) {
@@ -1384,5 +1324,6 @@
     });
   </script>
 
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
